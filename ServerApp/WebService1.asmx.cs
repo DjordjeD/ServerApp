@@ -27,12 +27,10 @@ namespace ServerApp
         {
 
             string query = "Select VIP from AlgotechData where Name='" + name + "' and Surname='" + surname + "'";
-            //string query = "Select VIP from AlgotechData";
-           // string query = "Select VIP from AlgotechData where Name='" + name + "'";
-            db.readDatathroughAdapter(query,dt);
-            // if (read.ToString()=="1") return true;
-            // else return false;
-            string rez = JsonConvert.SerializeObject(dt);
+
+            db.readDatathroughAdapter(query,dt); 
+    
+            string rez = JsonConvert.SerializeObject(dt); //converts data table into Json
             return rez;
             
         }
